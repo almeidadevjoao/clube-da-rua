@@ -1,0 +1,292 @@
+html {
+    scroll-behavior: smooth;
+    background-color: #000;
+    /* Garante fundo preto na raiz */
+    color-scheme: dark;
+    /* Força o navegador a usar barras de rolagem escuras */
+}
+
+
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #000;
+    /* Antes era #f4f4f4 */
+    font-family: 'Arial Black', sans-serif;
+    color: #fff;
+    /* Alterei para branco para o texto padrão não sumir no fundo preto */
+}
+
+/* Tamanho controlado para a logo caber no menu */
+.navbar-logo {
+    height: 40px;
+    /* Altura ideal para não quebrar o menu */
+    width: auto;
+    border-radius: 5px;
+    /* Opcional: deixa as pontas levemente arredondadas */
+}
+
+
+/* Estilo do texto CDR ao lado da logo */
+.logo-text {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #fff;
+    letter-spacing: 1px;
+}
+
+/* Garante que a navbar tenha espaço para os itens */
+.navbar {
+    background-color: #000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 50px;
+}
+
+.navbar ul {
+    display: flex;
+    list-style: none;
+}
+
+.navbar ul li a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 0.8rem;
+    transition: 0.3s;
+}
+
+.navbar ul li a:hover {
+    color: #ccc;
+}
+
+/* Banner Principal - Futebol de Rua Brasil */
+.hero {
+    /* Usando uma imagem de alta resolução de futebol de rua */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+        url('Logo-CDR-one.png');
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 80vh;
+    /* Altura do banner */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    text-align: center;
+    border-bottom: 10px solid #000;
+    /* Estilo faixa de clube */
+}
+
+.hero h1 {
+    font-size: 5rem;
+    font-family: 'Arial Black', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: -2px;
+    text-shadow: 4px 4px 15px rgba(0, 0, 0, 0.9);
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+/* Botão Estilo Premium */
+.btn-main {
+    background-color: white;
+    color: #2a009c;
+    ;
+    border: none;
+    padding: 15px 40px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: 0.3s;
+}
+
+.btn-main:hover {
+    background-color: #2a009c;
+    ;
+    color: #fff;
+}
+
+.next-match {
+    background-color: #000;
+    /* Antes era #fff */
+    padding: 40px;
+    text-align: center;
+    border-top: 5px solid #111;
+    /* Cor escura para a borda */
+    color: #fff;
+    /* Garante que o texto fique visível */
+}
+
+.scoreboard {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    margin: 20px 0;
+}
+
+.vs {
+    margin: 0 30px;
+    color: #888;
+    font-size: 1rem;
+}
+
+/* Container que organiza a logo e o texto no canto esquerdo */
+.logo-container {
+    display: flex;
+    align-items: center;
+    /* Alinha o escudo e o texto no centro vertical */
+    gap: 10px;
+    /* Espaço entre o escudo e o nome */
+}
+
+.elenco {
+    padding: 60px 20px;
+    background-color: #0a0a0a;
+    /* Fundo levemente diferente do preto total */
+    text-align: center;
+}
+
+.titulo-secao {
+    font-size: 2.5rem;
+    color: #fff;
+    margin-bottom: 40px;
+    font-family: 'Impact', sans-serif;
+    letter-spacing: 2px;
+}
+
+.cards-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.card {
+    background: #111;
+    width: 280px;
+    border: 2px solid #333;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    /* Esse aqui é para o efeito de hover que já existia */
+    cursor: pointer;
+    position: relative;
+
+    /* NOVAS LINHAS PARA O EFEITO DE ENTRADA */
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* Classe que o JavaScript vai "colar" no card quando você rolar a página */
+.card.aparecer {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Efeito Glow FIFA Street ao passar o mouse */
+.card:hover {
+    transform: translateY(-10px) scale(1.02);
+    border-color: #ff0000;
+    box-shadow: 0 0 30px rgba(255, 0, 0, 0.4);
+}
+
+.foto-jogador {
+    height: 320px;
+    background-color: #222;
+    /* Fundo cinza caso não tenha foto */
+    background-size: cover;
+    background-position: center;
+    border-bottom: 4px solid #ff0000;
+}
+
+.card-info {
+    padding: 20px;
+}
+
+.numero {
+    font-size: 3rem;
+    font-weight: 900;
+    color: rgba(255, 255, 255, 0.1);
+    position: absolute;
+    bottom: 40px;
+    right: 10px;
+}
+
+.card-info h3 {
+    color: #fff;
+    font-size: 1.4rem;
+    margin-bottom: 5px;
+}
+
+.card-info p {
+    color: #ff0000;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+/* Fechei a chave aqui */
+
+.parceiros {
+    background-color: #000;
+    padding: 40px 0;
+    text-align: center;
+    border-top: 2px solid #1a1a1a;
+}
+
+.parceiros h3 {
+    color: #fff;
+    font-size: 1.2rem;
+    letter-spacing: 3px;
+    margin-top: 100px;
+    /* Reduzi um pouco para não ficar um buraco gigante */
+    margin-bottom: 50px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.grid-parceiros {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+/* Ajuste para as logos dos parceiros (incluindo a do CDR) */
+.item-parceiro img {
+    height: 40px;
+    /* Diminuímos a altura para ficar bem sutil */
+    width: auto;
+    /* Mantém a proporção */
+    max-width: 120px;
+    /* Garante que nenhuma logo fique larga demais */
+    object-fit: contain;
+    filter: grayscale(100%);
+    /* Mantém o padrão P&B que combinamos */
+    opacity: 0.6;
+    transition: all 0.3s ease;
+}
+
+/* Quando passar o mouse, ela ganha destaque */
+.item-parceiro img:hover {
+    filter: grayscale(0%);
+    opacity: 1;
+    transform: scale(1.1);
+}
