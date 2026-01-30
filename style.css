@@ -70,7 +70,7 @@ body {
 .hero {
     /* Usando uma imagem de alta resolução de futebol de rua */
     background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-        url('Logo-CDR-one.png');
+        url('img/Logo-CDR-one.png');
 
     background-size: cover;
     background-position: center;
