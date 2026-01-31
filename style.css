@@ -22,6 +22,71 @@ body {
     /* Alterei para branco para o texto padrão não sumir no fundo preto */
 }
 
+.placar-live-css {
+    background: linear-gradient(180deg, #050505 0%, #111 100%);
+    border-bottom: 2px solid #0055ff;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Inter', sans-serif;
+}
+
+/* O ponto vermelho que fica pulsando */
+.dot {
+    height: 8px;
+    width: 8px;
+    background-color: #ff0000;
+    border-radius: 50%;
+    display: inline-block;
+    box-shadow: 0 0 8px #ff0000;
+    animation: pulse 1.5s infinite;
+    margin-right: 6px;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.3); opacity: 0.5; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+.live-text {
+    color: #ff0000;
+    font-size: 0.7rem;
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+
+.match-display {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-top: 5px;
+}
+
+.team-name {
+    color: white;
+    font-weight: 800;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+}
+
+.score-badge {
+    background: #0055ff;
+    color: white;
+    padding: 4px 15px;
+    border-radius: 4px;
+    font-size: 1.4rem;
+    font-weight: 900;
+    display: flex;
+    gap: 8px;
+    box-shadow: 0 0 15px rgba(0, 85, 255, 0.3);
+}
+
+.divider {
+    opacity: 0.5;
+}
+
 /* Tamanho controlado para a logo caber no menu */
 .navbar-logo {
     height: 40px;
@@ -119,6 +184,36 @@ body {
     background-color: #2a009c;
     ;
     color: #fff;
+}
+
+/* Classe para os botões de assinar */
+.btn-animado {
+    transition: all 0.3s ease; /* Faz a mudança ser suave */
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-animado:hover {
+    transform: translateY(-5px) scale(1.05); /* Sobe um pouco e aumenta */
+    box-shadow: 0 10px 20px rgba(0, 85, 255, 0.4); /* Brilho azul embaixo */
+    background-color: #0044cc !important; /* Muda o tom do azul */
+    letter-spacing: 1px; /* Espaça um pouco as letras (efeito elegante) */
+}
+
+/* Efeito de brilho passando pelo botão */
+.btn-animado::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg, transparent, rgba(255,255,255,0.3), transparent);
+    transition: all 0.5s;
+}
+
+.btn-animado:hover::after {
+    left: 100%;
 }
 
 .next-match {
